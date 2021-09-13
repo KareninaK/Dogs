@@ -1,0 +1,111 @@
+.contenedor-principal{
+    min-height: 100vh;
+    padding-top: 25px;
+    background-image: url('img/bg.jpg');
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contenedor{
+    max-width: 1500px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(179, 145, 168, .5);
+    border-radius: 20px;
+    padding: 15px;
+    border: 1px solid rgb(179, 145, 168, 1);
+    backdrop-filter: blur(6px);
+    overflow: hidden;
+}
+.contenedor::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.2);
+    pointer-events: none;
+    transform: skewX(345deg);
+}
+.contenedor .detail-izq{
+    width: 50%;
+    height: 100%;
+}
+.contenedor .detail-izq img{
+    width: 550px;
+    height: 500px;
+    border-radius: 25px;
+}
+.contenedor .detail-der{
+    width: 50%;
+}
+.btn{
+    position: relative;
+    display: inline-block;
+    width: 160px;
+    height: 60px;
+    margin: 20px;
+    background: #fff;
+    color: #000;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+.btn::before,
+.btn::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #f00;
+    transition: 0.5s;
+    background: linear-gradient(45deg, var(--color1), var(--color3), var(--color3), var(--color1));
+}
+.btn:hover::before{
+    inset: -3px;
+}
+.btn:hover::after{
+    inset: -3px;
+    filter: blur(10px);
+}
+.back-btn{
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    background: var(--color4);
+    color: var(--color2);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Glory', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 1px solid var(--color1);
+    overflow: hidden;
+}
+.back-btn:hover{
+    color: var(--color1);
+}
+.back-btn:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.080);
+    transform: skew(35deg);
+}
