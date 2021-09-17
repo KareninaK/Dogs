@@ -16,6 +16,7 @@ export default function Card({image, name, temperament, weight, id}){
                     } 
                 }(temperament)}</p>
                 <h3>{weight + 'Kg'}</h3>
+                
             </div>
         </div>
     );

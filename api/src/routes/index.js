@@ -60,6 +60,7 @@ router.get('/dogs', async (req, res)=>{
         dogsName.length ? res.status(200).send(dogsName) :  res.status(404).send('No se encuentra el perro');
     } else { //si no hay un query
         res.status(200).send(dogsTotal);
+
     }
 }); 
 
@@ -79,19 +80,18 @@ router.get('/dogs/:id', async (req, res)=>{
 
 
 //get temperaments
-router.get("/temperament", async (req, res) => {
+router.get("/temperament", async (_req, res) => {
     const temperamentApi = (await axios.get(`https://api.thedogapi.com/v1/breeds?api_key=${API_KEY}`)).data
 
     let temperaments = temperamentApi.map((ob) => ob.temperament);
-    temperaments = temperaments.join().split(',')
-    temperaments = temperaments.map(t => t.trim())
-    temperaments = temperaments.filter(t=> t)
-
+    temperaments = temperaments.join().split(',');
+    temperaments = temperaments.map(t => t.trim());
+    temperaments = temperaments.filter(t=> t);
     temperaments = [... new Set (temperaments)].sort(); 
 
     temperaments.forEach((ob) => {
       Temperament.findOrCreate({ //si no lo encuentra lo crea, sino no hace nada.
-        where: { name: ob },
+        where: { name: ob }
       });
     });
     const allTemperaments = await Temperament.findAll();
@@ -99,7 +99,6 @@ router.get("/temperament", async (req, res) => {
      //traigo todos los temperamentos
     res.send(allTemperaments);
   });
-
 
 
 router.post("/dog", async (req, res) => {

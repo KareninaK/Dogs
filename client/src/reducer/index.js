@@ -76,7 +76,7 @@ function  rootReducer (state = initialState, action){
                    
                     let na = parseInt(a.weight.replace('-','').substr(0,2))
                     let nb = parseInt(b.weight.replace('-','').substr(0,2))
-                    //console.log('na', na, 'nb', nb)
+                  
                     if (na > nb) {
                         return -1;
                     }
@@ -98,10 +98,18 @@ function  rootReducer (state = initialState, action){
                 ...state,
                 detail : action.payload
             }
+        case 'CLEAN_GET_ID':
+            return{
+                ...state,
+                detail: []
+            }
 
         default:
             return initialState;
     }
 }
+
+
+
 
 export default rootReducer;

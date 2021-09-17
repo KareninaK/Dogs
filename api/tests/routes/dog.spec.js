@@ -1,7 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const { expect } = require('chai');
 const session = require('supertest-session');
-const { orderByWeight } = require('../../../client/src/actions/index.js');
 const app = require('../../src/app.js')
 const { Dogs, conn } = require('../../src/db.js');
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {useDispatch, useSelector} from 'react-redux';  //hooks
 import { Link } from 'react-router-dom';
-import { getDogs, filterByTemperament, Created, Order, getTemperaments, orderByWeight } from '../actions';
+import { getDogs, filterByTemperament, Created, Order, getTemperaments, orderByWeight} from '../actions';
 import Card from './Card';
 import Paginado from './Paginado';
 import SearchBar from './SearchBar';
@@ -101,7 +101,7 @@ export default function Home() {
                     <option  value='default' disabled>Orden por peso</option>
                     <option value='maxW'>Mayor Peso</option> 
                     <option value='minW'>Menor Peso</option> 
-                </select>
+                </select>           
                 <select  defaultValue={'default'} onChange = {e=> FilterCreated(e)} className="select-btn">
                     <option value='default' disabled>Filtro por razas</option>
                     <option value='all'>Todas las razas</option> 
@@ -135,7 +135,7 @@ export default function Home() {
                                     />
                                 </Link>
                             </div>
-                            )
+                        )
                     })
                 }
             </div>

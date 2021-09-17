@@ -28,6 +28,9 @@
     font-weight: bold;
     font-family: 'Glory', sans-serif;
     margin: 15px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 .label input{
     padding: 5px;
@@ -53,7 +56,7 @@
     border-radius: 5px;
     font-size: 14px;
     font-weight: 700;
-    font-family: 'Roboto', sans-serif; 
+    font-family: 'Roboto', sans-serif;
     letter-spacing: 1px;
     outline: none;
 }
@@ -65,3 +68,12 @@
     font-weight: 700;
     letter-spacing: 1px;
 }
+
+.label button{
+    margin-left: 5px;
+    padding: 5px;
+    background-color:var(--color4);
+    border: 2px solid var(--color2);
+    color:var(--color2);
+}
+
