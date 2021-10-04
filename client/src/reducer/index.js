@@ -86,7 +86,7 @@ function  rootReducer (state = initialState, action){
                     return 0;
                 })
                 : state.dogs.sort(function (a, b) {
-                    return parseInt(a.weight.replace('-','').substr(0,2)) - parseInt(b.weight.replace('-','').substr(0,2))
+                    return parseInt(a.weight.replace('-','').substr(0,2)) - parseInt(b.weight.replace('-','').substr(0,2)) 
                 });
           return {
             ...state,

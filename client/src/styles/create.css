@@ -4,7 +4,7 @@
     background-attachment: fixed;
     display: flex;
     flex-direction: column-reverse;
-    justify-content: space-around;
+    justify-content: flex-end;
     align-items: center;
 }
 .contenedor-create{
@@ -17,6 +17,7 @@
     background-color: rgb(179, 145, 168, .5);
     border-radius: 20px;
     padding: 100px;
+    margin-top: 30px;
     border: 1px solid rgb(179, 145, 168, 1);
     backdrop-filter: blur(6px);
     overflow: hidden;
@@ -28,9 +29,6 @@
     font-weight: bold;
     font-family: 'Glory', sans-serif;
     margin: 15px auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
 }
 .label input{
     padding: 5px;
@@ -46,6 +44,10 @@
 .label input:hover,
 .label input:link{
     border: 2px solid var(--color1);
+}
+.label p{
+    margin: 10px auto;
+    text-shadow: 1px 1px 20px red;
 }
 .label select{
     padding-left: 5px;
@@ -69,11 +71,21 @@
     letter-spacing: 1px;
 }
 
-.label button{
+.temp-cont{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: var(--color4);
+    text-shadow: 1px 1px 3px var(--color2);
+    font-size: 25px;
+    font-weight: bold;
+    font-family: 'Glory', sans-serif;
+    margin-bottom: 15px;
+}
+.temp-cont button{
     margin-left: 5px;
-    padding: 5px;
+    padding: 7px;
     background-color:var(--color4);
     border: 2px solid var(--color2);
     color:var(--color2);
 }
-

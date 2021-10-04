@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Card({image, name, temperament, weight, id}){
+export default function Card({image, name, temperament, weight, id, height}){
     return (
         <div key={id} className="figure">
             <img src={image} className="frontal" alt='no anda'></img>
@@ -16,6 +16,7 @@ export default function Card({image, name, temperament, weight, id}){
                     } 
                 }(temperament)}</p>
                 <h3>{weight + 'Kg'}</h3>
+                <h3>{height + 'cm'}</h3>
                 
             </div>
         </div>

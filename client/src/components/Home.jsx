@@ -132,6 +132,7 @@ export default function Home() {
                                         name = {e.name}
                                         temperament = {e.createdInDB? e.temperaments : e.temperament}
                                         weight = {e.weight}
+                                        height = {e.height}
                                     />
                                 </Link>
                             </div>

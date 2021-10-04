@@ -14,19 +14,6 @@ import axios from 'axios';
     }
 }
 
-export const getDogs = () =>{
-    return (dispatch) => {
-        axios.get('http://localhost:3001/dogs',{})
-        .then((response) => {
-            dispatch({
-                type:'GET_DOG', 
-                payload: response.data
-            })
-        })  
-    }
-}
-
-
 export function filterByTemperament(payload){
     return{
         type: 'FILTER_BY_TEMP',
