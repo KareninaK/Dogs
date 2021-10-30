@@ -5,7 +5,8 @@ import axios from 'axios';
 
   export function getDogs (){
     return async function(dispatch){
-        var json = await axios.get('http://localhost:3001/dogs',{
+        //var json = await axios.get('http://localhost:3001/dogs',{
+        var json = await axios.get('/dogs',{
         });
         return dispatch({
             type:'GET_DOG', 
@@ -35,11 +36,11 @@ export function Order (payload){
     }
 } 
 
-
 export function getRazeDog (payload){ //payload seria el nombre de la raza
     return async function (dispatch){
         try{
-            var json = await axios.get('http://localhost:3001/dogs?name=' + payload);
+            //var json = await axios.get('http://localhost:3001/dogs?name=' + payload);
+            var json = await axios.get('/dogs' + payload);
             return dispatch({
                 type: 'GET_RAZE_DOG',
                 payload: json.data
@@ -52,7 +53,8 @@ export function getRazeDog (payload){ //payload seria el nombre de la raza
 
 export function getTemperaments (){
     return async function(dispatch){
-        var json = await axios.get ('http://localhost:3001/temperament', {});
+        //var json = await axios.get ('http://localhost:3001/temperament', {});
+        var json = await axios.get ('/temperament ', {});
         return dispatch({
             type: 'GET_TEMP',
             payload: json.data
@@ -62,7 +64,8 @@ export function getTemperaments (){
 
 export function postDog(payload){
     return async function(){
-        var json = await axios.post('http://localhost:3001/dog', payload)
+        //var json = await axios.post('http://localhost:3001/dog', payload)
+        var json = await axios.post('/dogs', payload)
         return json;
     }
 }
@@ -77,7 +80,8 @@ export function orderByWeight(payload){
 export function getDogId(id){
     return async function(dispatch){
         try{
-            var json = await axios.get('http://localhost:3001/dogs/' + id) 
+            //var json = await axios.get('http://localhost:3001/dogs/' + id) 
+            var json = await axios.get('/dogs' + id) 
             return dispatch({
                 type: 'GET_DOG_ID',
                 payload: json.data

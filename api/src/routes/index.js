@@ -46,9 +46,9 @@ const getAllDB = async() => {
 //concateno lo que trae de la api y lo que trae de la bd
 const getAll = async() => {
     const apiInfo = await getAllApi();
-    const dbInfo  = await getAllDB();
-    const total = apiInfo.concat(dbInfo);
-    return total;
+    // const dbInfo  = await getAllDB();
+    // const total = apiInfo.concat(dbInfo);
+    // return total;
 }
 
 
@@ -64,7 +64,6 @@ router.get('/dogs', async (req, res)=>{
 
     }
 }); 
-
 
 
 //get id

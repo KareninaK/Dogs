@@ -124,6 +124,7 @@ export default function DogCreate(){
                     onChange={(e)=>handleChange(e)} 
                     placeholder='Menor altura' 
                     required/>cm 
+                    
                     <input type='number' 
                     value={input.max_Height} 
                     name='max_Height' 
@@ -209,6 +210,7 @@ export default function DogCreate(){
                     {[
                         input.temperament.map((e) =><div className='temp-cont'><p key={e.id}> {temperaments.find((v) => v.id === e)?.name} </p> <button onClick={()=> handleDelete(e)}>X</button></div> )   
                     ]}
+                    
                 </div>
             </div>        
         </div>
