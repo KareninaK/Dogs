@@ -3,7 +3,6 @@ require('dotenv').config();
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
 const axios = require ('axios'); //modulo no especifico path
-//tablas
 const {Dogs,Temperament} = require('../db.js');
 const router = Router();
 const { API_KEY } = process.env;
@@ -11,11 +10,13 @@ const errorHandler = require('../utils/middleware/errorHandler');
 const setHeaders = require('../utils/middleware/setHeaders');
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
-
+router.use(errorHandler);
+router.use(setHeaders);
 
 //funcion que trae la informacion de la api
 const getAllApi = async() =>{  //no se sabe cuanto va a tardar la respuesta por eso uso async await
-    const api = await axios.get(`https://api.thedogapi.com/v1/breeds?api_key=${API_KEY}`); 
+    //const api = await axios.get(`https://api.thedogapi.com/v1/breeds?api_key=${API_KEY}`); 
+    const api = await axios.get(`https://api.thedogapi.com/v1/breeds`); 
     const apiInfo = await api.data.map(e => { //que devuelva solo la info que le pido
         return{
             id: e.id,
@@ -46,9 +47,9 @@ const getAllDB = async() => {
 //concateno lo que trae de la api y lo que trae de la bd
 const getAll = async() => {
     const apiInfo = await getAllApi();
-    // const dbInfo  = await getAllDB();
-    // const total = apiInfo.concat(dbInfo);
-    // return total;
+    const dbInfo  = await getAllDB();
+    const total = apiInfo.concat(dbInfo);
+    return total;
 }
 
 

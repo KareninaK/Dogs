@@ -22,7 +22,7 @@ export default function Home() {
     
     //estado local para los perros por pagina y los va a setear
     //eslint-disable-next-line
-    const [dogsXPage, setDogsXpage] = useState(8);  //8 perros por pagina
+    const [dogsXPage, setDogsXpage] = useState(10);  //8 perros por pagina
 
     const LastDogIndex = currentPage * dogsXPage; //8
 
