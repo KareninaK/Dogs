@@ -41,7 +41,7 @@ export function getRazeDog (payload){ //payload seria el nombre de la raza
     return async function (dispatch){
         try{
             //var json = await axios.get('http://localhost:3001/dogs?name=' + payload);
-            var json = await axios.get('/dogs' + payload);
+            var json = await axios.get('/dogs?name=' + payload);
             return dispatch({
                 type: 'GET_RAZE_DOG',
                 payload: json.data
