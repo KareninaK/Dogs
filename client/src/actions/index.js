@@ -8,6 +8,7 @@ import axios from 'axios';
         //var json = await axios.get('http://localhost:3001/dogs',{
         var json = await axios.get('/dogs',{
         });
+        console.log('hola', json.data);
         return dispatch({
             type:'GET_DOG', 
             payload: json.data
