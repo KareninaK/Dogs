@@ -82,7 +82,7 @@ export function getDogId(id){
     return async function(dispatch){
         try{
             //var json = await axios.get('http://localhost:3001/dogs/' + id) 
-            var json = await axios.get('/dogs' + id) 
+            var json = await axios.get('/dogs/' + id) 
             return dispatch({
                 type: 'GET_DOG_ID',
                 payload: json.data
